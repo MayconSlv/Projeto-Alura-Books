@@ -1,0 +1,154 @@
+/* ====display inline-block para poder usar a altura e largura e mostrar a imagem===== */
+
+.menu__hamburguer {
+    background-image: url(../images/Menu.svg);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ===display flex e justify content para separar os itens do cabeçalho(os icones da direita e esquerda)==== */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--cor-branco);
+    align-items: center;
+    position: relative;
+}
+
+/* ====esses valores foram usados para deixar os elementos dentro do container um ao lado do outro (inline) e ao centro do cross exis==== */
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.menu__imagem {
+    padding: 1em;
+}
+
+.menu__lista {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: var(--cor-branco);
+}
+
+.menu__botao:checked~.menu__lista {
+    display: block;
+}
+
+.menu__botao {
+    display: none;
+}
+
+.menu__lista-titulo,
+.menu__lista-item {
+    padding: 1em;
+}
+
+.menu__lista-titulo {
+    color: var(--cor-laranja);
+    font-weight: 700;
+}
+
+.menu__lista-link {
+    color: var(--cor-azul);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menu__titulo, .cabecalho__lista, .container__mensagem{
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .menu__hamburguer,
+    .menu__imagem-favoritos {
+        display: none;
+    }
+
+    .cabecalho {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menu__titulo {
+        display: block;
+        font-size: 30px;
+        font-weight: 400;
+        font-family: var(--fonte-secundaria);
+    }
+
+    .menu__titulo-negrito {
+        font-weight: 700;
+    }
+
+    .cabecalho__lista {
+        display: flex;
+        justify-content: space-around;
+        text-transform: uppercase;
+    }
+
+    .cabecalho__lista-item {
+        margin: 0 2em;
+    }
+
+    .cabecalho__lista-link {
+        color: var(--cor-preta);
+        text-decoration: none;
+    }
+
+    .lista__botao {
+        display: none;
+    }
+
+    .lista__botao:checked~.menu__lista {
+        display: block;
+    }
+
+    .menu__lista {
+        margin-right: 20em;
+    }
+
+    .cabecalho__lista-item:hover {
+        cursor: pointer;
+    }
+
+    .menu__lista-link {
+        color: var(--cor-azul);
+    }
+
+    .container {
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .container__mensagem {
+        display: block;
+    }
+
+    .cabecalho__lista {
+        margin-right: 20em;
+    }
+
+    .container__icons {
+        width: 30em;
+    }
+
+    .container__icon {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        text-decoration: none;
+        color: var(--cor-preta);
+        font-size: 20px;
+    }
+}
